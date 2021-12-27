@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('user_HQbxN7Aemvc5ryt20tmCD');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_okubjdr', 'template_989j7ut', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+    <link href="styles/valanta2.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="header0">
+        <div class="header01">
+            <img src="data:image/jpeg;base64,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" class="img0">
+        </div>
+        <div class="line"></div>
+        <div class="header02">
+            <p>UA</p>
+            <div class="header03">
+                RU
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="header04">
+            <div class="header05">
+                USD 28,90
+
+            </div>
+            <div class="header05">
+                EUR 35,00
+
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="header06">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAASFBMVEX///+np6ekpKTDw8O1tbXOzs7MzMyysrKioqKurq7KysrR0dHU1NTe3t7a2tqqqqr39/fw8PDq6uq9vb3d3d3s7Ozz8/Pk5OTc5mtrAAADR0lEQVR4nO3dC5KiMBSFYQmo4amAyv53Os7U9LRVVI8kJPeexPOvIJ9BghrwcGDMv+s4LcPQHU9NWc5z9bZFe8AOPZaurIvCGGu+K95kKu1hb+wxlIW170HrztpD39K9qb1wiQivbe2tS0E4zXYPD144VXt92MJx3nV44gvbED5g4VjbED5cYR9mAnGFTaAJhBWW4YCYwjnUEYoqLEMCEYVNUCCgcAj4HoQUjoGBeMJz2GMUT9iGBqIJx+BANGHQlRBReA99moETVuGnEEv4iDCFWMLAVzOAwksEIJRwijGFUMJj9sIqBhBJeI0yhUjCW4y1AkoYZa2AEka4JgUT1lGASMI4b0MgYZSLUijhEkdoMhAaYy71z+Hsxej9TqXGVsN41R78pgYvoTlP2gPfnJfQlNrDdqjzEJpGe9QueXxTambtQTvlIxy1B+2UuzCpN+HBR2jTOY3+yWMOtYfsmLswlX2VXzkLEzuT+giTWgwPFOYgdL5qoxAuCinEj0IK8aNwLTxpD9kxCinEj0IK8aPwE4WpXdO43ykD+31pPzy7Peu/Wpal99i2Z+Zu+K57rf3bsR3kgeXr8wLs73vsrfW7074wG7LyP9/E2Mv9v1dB/pvxOHssfxYqzKGw8Ji9UP5UIy2U3zEkLbxnL5TfLyUtFAdKCy/ZCxUuXmWFGntuhIXyC760UOGzhazQKmwRFhbKL/jSQoUN0sJCeaCwsM5dqPLURFmhxiZbWWGbu9D22QsVlkPho1TjfiFRYZ29UOWnDUmhzlZwUaHCp0NZocpiITuHGouF7JlG5eZSSaHGJwtRodJdNZJClVOp5G/AGl9DPVtenwZ1+ZcH4N1LhfanAc6PNvmAe9c67SE75i7U+Py+JwopxI/CtVDnisU/CinEj0IK8aOQQvwopBA/CinEj0IK8aOQQvwopBA/CtMXOt+QTyFcFFKIH4UU4kfhJwpTexIWhRTiR+FamP+5NH9h/kcphWhRSCF+FFKIH4UU4kchhfhRSCF+FFKIH4UU4kchhfhRuBam9m9IFFKIH4UU4kchhfhRSCF+FFKI34lCCuGjkEL8KKQQPwopxC9/oftTI1ITLta4ZRX+RHVft9Kt1P44AKxfdpRQDNfw2MkAAAAASUVORK5CYII=" class="img1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHQxNuHuwMi7ZUdIg8hDuB1uPgpZtH_Zh0HQ&usqp=CAU" class="img1">
+            <img src="data:image/png;base64,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" class="img1">
+        </div>
+        <div class="line"></div>
+        <div class="header07">
+            <div class="header08">
+                <a class="a0">044-537-20-07</a>
+                <a class="a0">068-537-20-07</a>
+
+            </div>
+            <div class="header09">
+                <i class="i0">&#9990;</i>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="header10">
+            <div class="header11">
+                MAISTRA ONLINE
+
+            </div>
+            <div class="header12">
+                <i class="i2">&#128197;</i>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="header13">
+            <div class="header14">
+                ТУРЫ ONLINE
+
+            </div>
+            <div class="header15">
+                <i class="i3">&#128270;</i>
+            </div>
+        </div>
+    </div>
+    <div class="line2"></div>
+    <div class="header20">
+        <div class="header21">
+            <i class="i3">&#128270;</i>
+        </div>
+        <div class="header21">
+            Отели
+        </div>
+        <div class="header21">
+            Страны
+        </div>
+        <div class="header21">
+            Авиа
+        </div>
+        <div class="header21">
+            Каталог туров
+        </div>
+        <div class="header21">
+            Агентам
+        </div>
+        <div class="header21">
+            О нас
+        </div>
+        <div class="header21">
+            Блог
+        </div>
+        <div class="header21">
+            FAQ
+        </div>
+        <div class="header21">
+            Контакты
+        </div>
+    </div>
+    <div class="img_m">
+        <div class="nothing1">
+
+        </div>
+        <div class="content1">
+            <div class="content2">
+                От 300 € за сутки
+            </div>
+            <div class="nothing3"></div>
+            <div class="content3">
+                НОВЫЙ ЭКО-ОТЕЛЬ MASTILA НА О.ХВАР В ХОРВАТИИ
+
+            </div><div class="nothing4"></div>
+            <button class="content4">
+                Подробнее
+
+            </button>
+            <div class="nothing5">
+
+            </div>
+            <div class="content5">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle1"></div>
+                <div class="circle1"></div>
+                <div class="circle1"></div>
+
+            </div>
+
+        </div>
+        <div class="nothing2">
+
+        </div>
+    </div>
+    <div class="intro_context">
+        <div class="nothing6">
+
+        </div>
+        <div class="intro2">
+            <div class="intro_context1">
+                ВАШ ТУРОПЕРАТОР ВЫСОКОГО УРОВНЯ ОБСЛУЖИВАНИЯ.
+
+            </div>
+            <div class="nothing7">
+
+            </div>
+            <div class="intro_context2">
+                Откройте мир путешествий заново.
+            </div>
+            <div class="nothing8">
+
+            </div>
+            <div class="intro_context4">
+                <div class="intro_context3">
+                    Что мы предлагаем?
+
+                </div>
+                <div class="intro_context5">
+                    Консультація
+                </div>
+            </div>
+            <div class="nothing9"></div>
+        </div>
+        <div class="circle0">
+            <svg width="45" height="175" viewBox="0 0 45 175" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22.5" cy="22.5" r="21.9" stroke="#969696" stroke-width="1.2" stroke-dasharray="6 4"/>
+                <circle cx="22.5" cy="87.5" r="21.9" stroke="#969696" stroke-width="1.2" stroke-dasharray="6 4"/>
+                <circle cx="22.5" cy="152.5" r="21.9" stroke="#969696" stroke-width="1.2" stroke-dasharray="6 4"/>
+                <path d="M27.7492 13.6932C27.2516 13.2249 26.6148 13 25.973 13C25.2506 13 24.521 13.2848 23.977 13.8295L23.7436 14.063L23.5101 13.8288C22.9661 13.2848 22.2365 13 21.5141 13C20.8723 13 20.2355 13.2249 19.7379 13.6932C18.6436 14.7233 18.6243 16.4466 19.6794 17.5018L23.7436 21.5659L27.8077 17.5018C28.8628 16.4466 28.8436 14.7233 27.7492 13.6932Z" fill="#969696"/>
+                <path d="M31.739 23.6352C31.1144 23.2119 30.3783 23.3318 29.7266 23.708C29.0748 24.0842 25.3326 27.2839 25.3326 27.2839L21.6489 27.2846C21.4776 27.2846 21.292 27.0919 21.292 26.9212C21.292 26.7206 21.4669 26.5643 21.6489 26.5643H23.9027C24.6915 26.5643 25.5746 26.0503 25.5746 25.1365C25.5746 24.1656 24.6915 23.7087 23.9027 23.7087C22.5341 23.7087 22.2679 23.7145 22.2679 23.7145C21.7196 23.7145 21.1635 23.6816 20.7351 23.4525C20.164 23.1598 19.5058 22.9941 18.8034 22.9941C17.624 22.9941 16.5682 23.4646 15.8443 24.2063L12 27.9914L16.2833 32.2747L17.7111 30.8469H24.9406C25.6602 30.8469 26.3549 30.5828 26.8924 30.1052L31.7875 24.614C32.0867 24.3484 32.0695 23.8601 31.739 23.6352Z" fill="#969696"/>
+                <path d="M31.081 91.0948C30.9224 90.8861 30.7083 90.7231 30.4645 90.6265C30.0379 90.4576 29.5749 90.4927 29.1857 90.7175L26.6157 92.2013C26.6011 92.418 26.56 92.637 26.4881 92.854C26.0463 94.1867 24.62 94.9251 23.2638 94.5617L20.7234 93.881C20.4108 93.7973 20.2253 93.476 20.309 93.1634C20.3928 92.8508 20.7141 92.6653 21.0267 92.7491L23.6059 93.4402C24.3873 93.6495 25.1906 93.1858 25.3999 92.4044C25.6093 91.6229 25.1456 90.8197 24.3642 90.6103L20.4264 89.5552C19.6705 89.3527 18.881 89.4566 18.2033 89.8479L13.2931 92.6828C13.0128 92.8446 12.9168 93.203 13.0786 93.4832L15.5171 97.7069C15.5948 97.8415 15.7228 97.9396 15.8729 97.9799C16.023 98.0201 16.1829 97.9991 16.3175 97.9213L18.5319 96.6428L23.2687 96.9484C23.8478 96.9857 24.4195 96.8521 24.9221 96.5619L30.6506 93.2547C31.4043 92.8194 31.625 91.8109 31.081 91.0948Z" fill="#969696"/>
+                <path d="M18.2852 87.375H26.0976C26.4212 87.375 26.6836 87.1126 26.6836 86.789C26.6836 85.2338 25.8891 83.8608 24.6847 83.0542C24.0358 83.6737 23.1573 84.0547 22.1914 84.0547C21.2255 84.0547 20.347 83.6737 19.6981 83.0542C18.4937 83.8608 17.6992 85.2338 17.6992 86.789C17.6992 87.1126 17.9616 87.375 18.2852 87.375Z" fill="#969696"/>
+                <path d="M22.1914 82.8828C23.5398 82.8828 24.6328 81.7898 24.6328 80.4414C24.6328 79.0931 23.5398 78 22.1914 78C20.8431 78 19.75 79.0931 19.75 80.4414C19.75 81.7898 20.8431 82.8828 22.1914 82.8828Z" fill="#969696"/>
+                <path d="M32.936 150.595C32.8637 150.372 32.6716 150.21 32.4402 150.176L25.9406 149.232L23.0338 143.342C22.9304 143.133 22.7169 143 22.4831 143C22.2493 143 22.0357 143.133 21.9323 143.342L19.0254 149.232L12.5259 150.176C12.2946 150.21 12.1023 150.372 12.0301 150.594C11.9578 150.817 12.0181 151.061 12.1855 151.224L16.8885 155.809L15.7784 162.282C15.7389 162.512 15.8336 162.745 16.0228 162.883C16.1298 162.96 16.2565 163 16.3839 163C16.4816 163 16.5798 162.977 16.6696 162.929L22.483 159.873L28.2962 162.929C28.5032 163.038 28.754 163.02 28.9431 162.883C29.1322 162.745 29.227 162.512 29.1875 162.282L28.0771 155.809L32.7806 151.224C32.948 151.061 33.0083 150.817 32.936 150.595Z" fill="#969696"/>
+                </svg>
+        </div>
+        <div class="intro_context6">
+            <div class="text1">ИНДИВИДУАЛЬНЫЙ ПОДХОД</div>
+            <div class="text2">КОНСЬЕРЖ-СЕРВИС</div>
+            <div class="text3">ОТДЫХ ПРЕМИУМ-КЛАССА</div>
+        </div>
+    </div>
+    <div class="paradise">
+        <div class="title01">
+            ЛУЧШИЕ ОТЕЛИ
+            <a>
+                <div class="circle3">
+                   <i>&#10229;</i>
+            
+                </div>
+            </a>
+            <a>
+                <div class="circle4">
+                    <i>&#10230;</i>
+                </div>
+            </a>
+            <div class="line3">
+
+            </div>
+            <div class="deskr0">
+                Все отели
+            </div>
+        </div>
+        <div class="title02">
+            <div class="hotel1">
+                <div class="h1">
+                    <div class="h_content11">
+                        Портонови, Черногория
+                    </div>
+                </div>
+                <div class="h2">
+                    <div class="h_content12">
+                        <div class="stars">
+                            <i class="i99">&#11088;</i>
+                            <i class="i99">&#11088;</i>
+                            <i class="i99">&#11088;</i>
+                            <i class="i99">&#11088;</i>
+                        </div>
+                        <div class="ttl">
+                            One&Only Portonovi
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hotel2">
+                <div class="h1">
+                    <div class="h_content21">
+                        Ровінь, п-в Істра
+                    </div>
+                </div>
+                <div class="h2">
+                    <div class="h_content22">
+                        <div class="stars">
+                            <i class="i99">&#11088;</i>
+                            <i class="i99">&#11088;</i>
+                            <i class="i99">&#11088;</i>
+                            <i class="i99">&#11088;</i>
+                            <i class="i99">&#11088;</i>
+                        </div>
+                        <div class="ttl">
+                            Зимовка в Regent 
+                            Porto Montenegro
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="hotel3">
+                <div class="h1">
+                    <div class="h_content31">
+                        Бока Котор, Черногория
+                    </div>
+                </div>
+                <div class="h2">
+                    <div class="h_content32">
+                        <div class="stars">
+                            <i class="i99">&#11088;</i>
+                            <i class="i99">&#11088;</i>
+                            <i class="i99">&#11088;</i>
+                            <i class="i99">&#11088;</i>
+                        </div>
+                        <div class="ttl">
+                            Лечение в Naftalan с 
+                            авиа Киев-Загреб-Киев
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actual">
+            <div class="title1">
+                <div class="title2">
+                    АКТУАЛЬНЫЕ ТУРЫ 
+                </div>
+                <div class="line4">
+
+                </div>
+                <button class="all_t">
+                    Все туры
+                </button>
+            </div>
+            <div class="hotels">
+                <div class="hotel4">
+                    <div class="hotel04">
+
+                    </div>
+                    <div class="d_hotel">
+                        <div class="title3">
+                            One&Only Portonovi
+
+                        </div>
+                        <div class="title4">
+                            первый ультрароскошный курорт One&Only в Европе
+                        </div>
+                        <div class="line5">
+
+                        </div>
+                        <div class="h_fot">
+                            <div class="h_fot1">
+                                <div class="h_fot3">
+                                    от 818 €
+                                </div>
+                                <div class="h_fot4">
+                                    за номер в сутки в сезон
+
+
+                                </div>
+                            </div>
+                            <div class="h_fot2">
+                                <p class="p1">от 3 ночей с 01 мая 2021</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel5">
+                    <div class="hotel05">
+
+                    </div>
+                    <div class="d_hotel1">
+                        <div class="title3">
+                            Зимовка в Regent Porto Montenegro
+
+                        </div>
+                        <div class="title4">
+                            це втілення високого стилю, в якому поєднується зручність...
+                        </div>
+                        <div class="line5">
+
+                        </div>
+                        <div class="h_fot">
+                            <div class="h_fot1">
+                                <div class="h_fot3">
+                                    от 938 €
+
+                                </div>
+                                <div class="h_fot4">
+                                    з особи
+
+
+                                </div>
+                            </div>
+                            <div class="h_fot2">
+                                <p class="p1">от 3 ночей с 01 мая 2021</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel6">
+                    <div class="hotel06">
+
+                    </div>
+                    <div class="d_hotel">
+                        <div class="title3">
+                            Лечение в Naftalan с 
+                            авиа Киев-Загреб-Киев
+
+                        </div>
+                        <div class="title4">
+                            первый бренд, воплотивший оригинальную концепцию пляжных...
+                        </div>
+                        <div class="line5">
+
+                        </div>
+                        <div class="h_fot">
+                            <div class="h_fot1">
+                                <div class="h_fot3">
+                                    от 175 €
+
+                                </div>
+                                <div class="h_fot4">
+                                    за номер в сутки
+
+
+                                </div>
+                            </div>
+                            <div class="h_fot2">
+                                <p class="p1">от 3 ночей с 01 мая 2021</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="form1">
+        <div class="form3">
+
+        </div>
+        <div class="form4">
+            <div class="form5">
+                <div class="form06">
+                    <i class="far fa-compass"></i>Откуда
+                   
+                </div>
+                <div class="form07">
+                    <i class="fas fa-map-marker-alt"></i>Куда (страна)
+
+                </div>
+                <div class="form08">
+                    <i class="far fa-calendar-check"></i>Дата заезда
+
+                </div>
+                <div class="form09">
+                    <i class="fas fa-user"></i>Туристы
+                </div>
+                <div class="form10">
+                    <i class="far fa-clock"></i>Ночей
+                </div>
+            </div>
+            <div class="form6">
+                <div class="form7">
+                    <div class="form11">
+                        Киев
+                    </div>
+                    <div class="line6">
+                        
+                    </div>
+                    <div class="form12">
+                        Выберите страну
+                        <div class="form13">
+                            <i class="fas fa-arrow-circle-down"></i>
+                        </div>
+                    </div>
+                    <div class="line6">
+
+                    </div>
+                    <div class="form14">
+                        От
+                        <div class="form13">
+                            <i class="fas fa-arrow-circle-down"></i>
+                        </div>
+                    </div>
+                    <div class="_">
+                        -
+                    </div>
+                    <div class="form14">
+                        До
+                        <div class="form13">
+                            <i class="fas fa-arrow-circle-down"></i>
+                        </div>
+
+                    </div>
+                    <div class="line6">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        
+        
+        
+    </div>
+    <div class="title5">
+        <div class="news_title">
+            <div class="title05">
+                ВАЖНЫЕ НОВОСТИ
+            </div>
+            <div class="div_l">
+                <div class="line4">
+
+                </div>
+            </div>
+            <button class="all_t">
+                Все туры
+            </button>
+        </div>
+        <div class="news">
+            <button class="b_l">
+                <i>&#8592;</i>
+            </button>
+            <div class="hotel7">
+                <div class="hotel07">
+
+                </div>
+                <div class="hotel_d">
+                    <div class="hotel_d1">
+                        <i>&#128197;</i>
+                        18 марта, 2021
+                    </div>
+                    <div class="hotel_d2">
+                        Зимовка в Regent Porto Montenegro
+                    </div>
+                    <a>
+                        <div class="hotel_d3">
+                            Подробнее
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+            <div class="hotel8">
+                <div class="hotel08">
+
+                </div>
+                <div class="hotel_d">
+                    <div class="hotel_d1">
+                        <i>&#128197;</i>
+                        18 марта, 2021
+                    </div>
+                    <div class="hotel_d2">
+                        Зимовка в Regent Porto Montenegro
+                    </div>
+                    <a>
+                        <div class="hotel_d4">
+                            Подробнее
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="hotel9">
+                <div class="hotel09">
+
+                </div>
+                <div class="hotel_d">
+                    <div class="hotel_d1">
+                        <i>&#128197;</i>
+                        18 марта, 2021
+                    </div>
+                    <div class="hotel_d2">
+                        Зимовка в Regent Porto Montenegro
+                    </div>
+                    <a>
+                        <div class="hotel_d4">
+                            Подробнее
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="hotel10">
+                <div class="hotel010">
+
+                </div>
+                <div class="hotel_d">
+                    <div class="hotel_d1">
+                        <i>&#128197;</i>
+                        18 марта, 2021
+                    </div>
+                    <div class="hotel_d2">
+                        Зимовка в Regent Porto Montenegro
+                    </div>
+                    <a>
+                        <div class="hotel_d4">
+                            Подробнее
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <button class="b_r">
+                <i>&#8594;</i>
+            </button>
+
+
+        </div>
+
+        
+    </div>
+    <div class="blog">
+        <div class="blog_t1">
+            <div class="title06">
+                БЛОГ
+            </div>
+            <div class="div_l">
+                <div class="line4">
+
+                </div>
+            </div>
+            <button class="all_t">
+                Все статьи
+            </button>
+        </div>
+        <div class="blog1">
+            <div class="circle5">
+                <i>&#8594;</i>
+            </div>
+            <div class="blog10">
+                <div class="blog01">
+
+                </div>
+                <div class="blog11">
+                    <div class="blog110">
+                        <i class="far fa-calendar-check"></i>18 марта, 2021
+                        <p class="p5"><i class="fas fa-eye"></i>1 358</p>
+                    </div>
+                    <div class="blog111">
+                        Зимовка в Regent 
+                        Porto Montenegro
+                    </div>
+                    <a href="#" class="a4">
+                        <div class="blog112">
+                        Подробнее
+                            <p class="p6">
+                               <i>&#8594;</i>
+                            </p>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="blog20">
+                <div class="blog02">
+
+                </div>
+                <div class="blog22">
+                    <div class="blog11">
+                        <div class="blog110">
+                            <i class="far fa-calendar-check"></i>18 марта, 2021
+                            <p class="p5"><i class="fas fa-eye"></i>1 358</p>
+                        </div>
+                        <div class="blog111">
+                            Зимовка в Regent 
+                            Porto Montenegro
+                        </div>
+                        <a href="#" class="a4">
+                            <div class="blog113">
+                                Подробнее
+                                <p class="p7">
+                                    <i>&#8594;</i>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog30">
+                <div class="blog03">
+
+                </div>
+                <div class="blog33">
+                    <div class="blog11">
+                        <div class="blog110">
+                            <i class="far fa-calendar-check"></i>18 марта, 2021
+                            <p class="p5"><i class="fas fa-eye"></i>1 358</p>
+                        </div>
+                        <div class="blog111">
+                            Зимовка в Regent 
+                            Porto Montenegro
+                        </div>
+                        <a href="#" class="a4">
+                            <div class="blog113">
+                                Подробнее
+                                <p class="p7">
+                                    <i>&#8594;</i>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog40">
+                <div class="blog04">
+
+                </div>
+                <div class="blog44">
+                    <div class="blog11">
+                        <div class="blog110">
+                            <i class="far fa-calendar-check"></i>18 марта, 2021
+                            <p class="p5"><i class="fas fa-eye"></i>1 358</p>
+                        </div>
+                        <div class="blog111">
+                            Зимовка в Regent 
+                            Porto Montenegro
+                        </div>
+                        <a href="#" class="a4">
+                            <div class="blog113">
+                                Подробнее
+                                <p class="p7">
+                                    <i>&#8594;</i>
+                                </p>
+    
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="form2">
+        <div class="form01">
+            <div class="form02">
+                <div class="form04">
+                    ПУТЕШЕСТВУЙ С Valanta Travel Company!
+                </div>
+                <div class="form05">
+                    Подписывайтесь на нашу рассылку, чтобы получать самые горячие предложения
+                </div>
+
+            </div>
+            <div class="form03">
+                <form class="inp1">
+                    <p><input type="search" class="inp2" placeholder="Email" color: white;>
+                        <p class="p2"><input type="radio" class="a1" value="Я турист"> Я турист</p>
+                        <p class="p2"><input type="radio" class="a1" value="Я турагент"> Я турагент</p>
+                    
+
+                    <input type="submit" class="sumbit1" value="Отправить"></p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="ch_us0">
+        <div class="ch_usd">
+            ПОЧЕМУ ВЫБИРАЮТ НАС
+        </div>
+        <div class="ch_us1">
+            <div class="ch_us10">
+                <div class="fone1">
+                    <div class="ch_d1">
+                        <div class="p8">
+                            Полностью  <b>  персонализированный подход </b>  к оформлению путешествия.
+                        </div>
+                        <div class="i1">
+                                <div class="i4">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fone11">
+                    <div class="ch_d1">
+                        <div class="p8">
+                            <b>Консьерж-сервис</b> и дополнительные услуги по запросу клиента: от билетов на мероприятия до уникальных туристических маршрутов.
+                        </div>
+                        <div class="i1">
+                                <div class="i4">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="ch_us11">
+                <div class="fone2">
+                    <div class="ch_d2">
+                        <div class="p8">
+                            <b>Эксклюзивные предложения</b> от мировых отельных цепочек.
+                        </div>
+                        <div class="i1">
+
+                                <div class="i4">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="fone21">
+                    <div class="ch_d2">
+                        <div class="p8">
+                            <b>18 лет</b> мы обеспечиваем незабываемый отдых клиентам и поддерживаем безупречную репутацию.
+                        </div>
+                        <div class="i1">
+                                <div class="i4">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ch_us12">
+                <div class="fone2">
+                    <div class="ch_d2">
+                        <div class="p8">
+                            <b>Хорватия, Черногория, Словения и Италия</b> – наши основные направления. Мы досконально знаем эти страны.
+                        </div>
+                        <div class="i1">
+                                <div class="i4">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fone21">
+                    <div class="ch_d2">
+                        <div class="p8">
+                            <b>Требовательный подход и внимание к деталям</b> мы используем для организации туров и в другие страны.
+                        </div>
+                        <div class="i1">
+                                <div class="i4">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ch_us13">
+                <div class="fone3">
+                    <div class="ch_d3">
+                        <div class="p8">
+                            Гарантию лучшей стоимости мы обеспечиваем, <b>заранее выкупая авиабилеты на чартерные рейсы.</b>
+                        </div>
+                        <div class="i1">
+                                <div class="i4">
+                                   <i class="far fa-check-circle"></i>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fone31">
+                    <div class="ch_d3">
+                        <div class="p8">
+                            <b>С нами будут только приятные сюрпризы:</b> мы вовремя предоставим всю необходимую информацию по правилам въезда, интересным событиям и другим важным новостям
+
+                        </div>
+                        <div class="i1">
+                                <div class="i4">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="pr_t">
+        <div class="margin">
+
+        </div>
+        <div class="t_pr">
+            <div class="t_pr1">
+                Вы – представитель турагентства?
+            </div>
+            <div class="t_pr2">
+                Для вас у нас есть специальные выгодные предложения.
+            </div>
+            <button class="button">
+                Узнать подробнее
+            </button>
+        </div>
+        <div class="t_pr_img">
+            <div class="t_img1">
+                <img src="valanta3.jpeg" class="t_img">
+            </div>
+        </div>
+    </div>
+    <div class="countries">
+        <div class="countries1">
+            <div class="c_t">
+                Мы обеспечиваем
+            </div>
+            <div class="c_t2">
+                <div class="c_t1">
+                    ОТДЫХ ПРЕМИУМ-КЛАССА С БОЛЬШИМ ВНИМАНИЕМ К ДЕТАЛЯМ
+                </div>
+                <div class="c_t3">
+                    Специализируемся <b>на 4 странах</b>
+
+                </div>
+            </div>
+            <div class="cn">
+                <div class="cn1">
+                    <div class="cn5">
+                        <img src="https://www.akabaltic.lt/cache/images_product_S_1_400x400/kroatijos_veliava_600x600.jpg" class="img4">
+                    </div>
+                    <div class="cn6">
+                        <div class="cn7">
+
+                        </div>
+                        <p class="p9">ХОРВАТИЯ</p>
+                        <button class="button2">
+                            Подробнее
+                        </button>
+                    </div>
+                    
+
+                </div>
+                <div class="cn2">
+                    <div class="cn5">
+                        <img src="https://www.akabaltic.lt/cache/images_product_S_1_400x400/juodkalnijos_veliava_600x600.jpg" class="img5">
+                    </div>
+                    <div class="cn6">
+                        <div class="cn7">
+
+                        </div>
+                        <p class="p9">ЧЕРНОГОРИЯ</p>
+                        <button class="button3">
+                            Подробнее
+                        </button>
+                    </div>
+
+                </div>
+                <div class="cn3">
+                    <div class="cn5">
+                        <img src="https://militaryarms.ru/wp-content/uploads/2021/08/bigstock-152523908-e1507483520114.jpg" class="img6">
+                    </div>
+                    <div class="cn6">
+                        <div class="cn7">
+
+                        </div>
+                        <p class="p9">СЛОВЕНИЯ</p>
+                        <button class="button3">
+                            Подробнее
+                        </button>
+                    </div>                    
+                </div>
+                <div class="cn4">
+                    <div class="cn5">
+                        <img src="https://preview.free3d.com/img/2016/11/2279246924034869140/jrirj7lw-900.jpg" class="img7">
+                    </div>
+                    <div class="cn6">
+                        <div class="cn7">
+
+                        </div>
+                        <p class="p9">ИТАЛИЯ</p>
+                        <button class="button3">
+                            Подробнее
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="c_titles">
+                <div class="c_title1">
+                    Обеспечиваем отдых с повышенной надежностью и персонализированным сервисом и 
+                    
+                    <p class="p10">в других странах</p>   
+
+                </div>
+                <div class="c_title2"> 
+                    <b>ОТДЫХ С VALANTA</b> ОСТАНЕТЬСЯ ЯРКИМ ВОСПОМИНАНИЕМ У ВАС В ПАМЯТИ НАВСЕГДА
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="servise">
+        <div class="servise1">
+            <div class="servise2">
+                <div class="servise6">
+                    <div class="servise4">
+                        ЭКСКЛЮЗИВНЫЙ КОНСЬЕРЖ СЕРВИС ОТ VALANTA TRAVEL COMPANY
+                    </div>
+                    <div class="line8">
+
+                    </div>
+                    <div class="servise7">
+                        <div class="servise8">
+                            Мы не ограничиваемся стандартным набором услуг туроператора, потому что главная цель – превратить отдых клиентов в незабываемый опыт. 
+                        </div>
+                        <div class="servise9">
+                            Поэтому стремимся обеспечить максимальный комфорт и удобство по всем направлениям. Всегда даем больше, чтобы приятно удивить клиентов. 
+                        </div>
+                    </div>
+                    <div class="servise5">
+                        предоставляем консьерж-услуги <b>любого уровня сложности:</b>
+
+                    </div>
+                </div>
+            </div>
+            <div class="servise3">
+                <div class="servise10">
+
+                </div>
+            </div>
+        </div>
+        <div class="servise11">
+            <div class="servise12">
+                <div class="servise13">
+                    <div class="s_fone1">
+                        <div class="s_t1">
+                            <div class="p12">
+                                /01
+                            </div>
+                            <div class="p11">
+                                Подбор и бронирование отелей и вилл самого высокого уровня
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line9">
+
+                    </div>
+                    <div class="s_fone1">
+                        <div class="s_t1">
+                            <div class="p12">
+                                /02
+                            </div>
+                            <div class="p11">
+                                Подбор и бронирование авиабилетов
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line9">
+
+                    </div>
+                    <div class="s_fone1">
+                        <div class="s_t1">
+                            <div class="p12">
+                                /03
+                            </div>
+                            <div class="p11">
+                                Аренда самолетов бизнес-авиации
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line9">
+
+                    </div>
+                    <div class="s_fone1">
+                        <div class="s_t1">
+                            <div class="p12">
+                                /04
+                            </div>
+                            <div class="p11">
+                                Организация трансферов
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line9">
+
+                    </div>
+                    <div class="s_fone1">
+                        <div class="s_t1">
+                            <div class="p12">
+                                /05
+                            </div>
+                            <div class="p11">
+                                Аренда яхт
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="servise14">
+                    <div class="s_fone2">
+                        <div class="s_t2">
+                            <div class="p12">
+                                /06
+                            </div>
+                            <div class="p11">
+                                Заказ столиков в ресторанах и даже рекомендации по блюдам
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line9">
+
+                    </div>
+                    <div class="s_fone2">
+                        <div class="s_t2">
+                            <div class="p12">
+                                /07
+                            </div>
+                            <div class="p11">
+                                Покупка билетов на концерты и мероприятия
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line9">
+
+                    </div>
+                    <div class="s_fone2">
+                        <div class="s_t2">
+                            <div class="p12">
+                                /08
+                            </div>
+                            <div class="p11">
+                                Индивидуальные экскурсии
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line9">
+
+                    </div>
+                    <div class="s_fone2">
+                        <div class="s_t2">
+                            <div class="p12">
+                                /09
+                            </div>
+                            <div class="p11">
+                                Организация корпоративных и личных мероприятий за границей
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="kons">
+        <div class="kons0">
+            <div class="kons1">
+                <div class="kons2">
+                    <div class="kons3">
+                        ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ СПЕЦИАЛИСТА
+                    </div>
+                    <div class="kons4">
+                        Оставьте данные прямо сейчас, и мы свяжемся с вами в ближайшее время
+                    </div>
+                </div>
+                <form class="kons_checkbox" id="contact-form">
+                    <input type="hidden" name="contact_number">
+                    <p> <input type="search" class="kons_checkbox2" placeholder="Имя" color: white; name="from_name">
+                        <input type="search" class="kons_checkbox1" placeholder="Email" color: white; name="reply_to">
+                        <input type="search" class="kons_checkbox1" placeholder="Телефон" color: white; name="phone">
+
+                    <input type="submit" class="sumbit3" value="Отправить"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="numbers">
+        <div class="numbers1">
+            <div class="numbers6">
+                <div class="numbers2">
+                    <div class="numbers4">
+                        VALANTA TRAVEL COMPANY <p class="p13">В ЦИФРАХ</p>
+                    </div>
+                    <div class="numbers5">
+                        На случай, если вы доверяете только сухим фактам:
+                    </div>
+                </div>
+                <div class="numbers3">
+                    <img src="valanta7.png">
+    
+                </div>
+            </div>
+            <div class="numbers10">
+                <div class="numbers11">
+                    <div class="numbers7">
+                        <div class="numbers8">
+                            18
+                        </div>
+                        <div class="line10">
+            
+                        </div>
+                        <div class="numbers9">
+                            лет компания успешно обеспечивает премиум-отдых своим клиентам
+                        </div>
+                    </div>
+                    <div class="numbers7">
+                        <div class="numbers8">
+                            8
+                        </div>
+                        <div class="line10">
+            
+                        </div>
+                        <div class="numbers9">
+                            несменных профессионалов в команде
+                        </div>
+                    </div>
+                </div>
+                <div class="numbers11">
+                    <div class="numbers7">
+                        <div class="numbers8">
+                            100+
+                        </div>
+                        <div class="line10">
+            
+                        </div>
+                        <div class="numbers9">
+                            уникальных посещенных стран
+                        </div>
+                    </div>
+                    <div class="numbers7">
+                        <div class="numbers8">
+                            4
+                        </div>
+                        <div class="line10">
+            
+                        </div>
+                        <div class="numbers9">
+                            основных направления, о которых мы знаем все, и не менее ответственный подход в работе с другими странами
+                        </div>
+                    </div>
+                </div>
+                <div class="numbers11">
+                    <div class="numbers7">
+                        <div class="numbers8">
+                            30
+                        </div>
+                        <div class="line10">
+            
+                        </div>
+                        <div class="numbers9">
+                            эксклюзивных контрактов с мировыми отельными цепочками
+                        </div>
+                    </div>
+                    <div class="numbers7">
+                        <div class="numbers8">
+                            с 2015
+                        </div>
+                        <div class="line10">
+            
+                        </div>
+                        <div class="numbers9">
+                            года мы – единственная в Украине компания, имеющая официальный статус Preferred Partner in Ukraine хорватского отельного холдинга Maistra Hospitality Group
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        
+
+        </div>
+    </div>
+    <div class="o_companies">
+        <div class="o_companies1">
+            <div class="o_companies2">
+                МЫ ГОРДИМСЯ ПАРТНЕРСТВОМ С ТАКИМИ КОМПАНИЯМИ
+
+            </div>
+            <div class="o_companies3">
+                <div class="o_companies4">
+                    Налаженное сотрудничество и хорошие отношения с отельными домами – ключевая задача для туроператора.
+                </div>
+                <div class="o_companies5">
+                    Это наша сильная сторона, благодаря которой мы обеспечиваем клиентам решение любых задач во время отдыха и удовлетворение даже самых требовательных запросов.
+                </div>
+            </div>
+        </div>
+        <div class="compan">
+           <div class="compan_c">
+            <div class="compan1_f">
+                <div class="compan1">
+                    <img src="valanta16.png" class="img_c1">
+                    
+                </div>
+            </div>
+            <div class="compan1_f">
+                <div class="compan1">
+                    <img src="valanta15.png" class="img_c2">
+                </div>
+            </div>
+            <div class="compan1_f">
+                <div class="compan1">
+                    <img src="valanta14.jfif" class="img_c3">
+
+                </div>
+            </div>
+            <div class="compan1_f">
+                <div class="compan1">
+                    <img src="valanta13.jfif" class="img_c4">
+
+                </div>
+            </div>
+            <div class="compan1_f">
+                <div class="compan1">
+                    <img src="valanta12.png" class="img_c5">
+
+                </div>
+            </div>
+            <div class="compan1_f">
+                <div class="compan2">
+                    <img src="valanta12.png" class="img_c5">
+
+                </div>
+            </div>
+            <div class="arrow">
+                <i>&#8594;</i>
+            </div>
+           </div>
+        </div>
+
+    </div>
+    <div class="sotr">
+        <div class="circle_s">
+            Сollaboration
+
+        </div>
+        <div class="sotr1">
+            <div class="sotr2">
+                <img src="valanta17.jfif" class="img_s">
+            </div>
+            <div class="sotr3">
+                <div class="sotr4">
+                    МЫ ПРЕДЛАГАЕМ ЭКСКЛЮЗИВНЫЕ И ПО-НАСТОЯЩЕМУ ВЫГОДНЫЕ УСЛОВИЯ СОТРУДНИЧЕСТВА ДЛЯ ТУРАГЕНТСТВ
+                </div>
+                <div class="sotr5">
+                    В нашем распоряжении 30 контрактов с мировыми отельными цепочками. Вы можете делегировать нам большую часть своей работы и в то же время обеспечить вашим клиентам отдых высшего уровня.
+                </div>
+            </div>
+        </div>
+        <div class="sotr6">
+            <div class="sotr_t">
+                <div class="sotr_t1">
+                    Почему турагентства выбирают именно нас, как туроператора:
+                </div>
+                    <a href="#"><button class="sotr_t2">
+                        <p class="p14">Сотрудничать</p>
+                    </button>
+                </a>
+            </div>
+            <div class="cards">
+                <div class="cards1">
+                    <div class="card1">
+                        <div class="card11">
+                            <div class="card12">
+                                Прямая телефонная связь
+                            </div>
+                            <div class="card13">
+                                К нам легко дозвониться и обсудить любые вопросы по заявке с менеджером.
+                            </div>
+                            <div class="card14">
+                                /01
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card5">
+                        <div class="card55">
+                            <div class="card12">
+                                Полное сопровождение заявки одним менеджером
+                            </div>
+                            <div class="card13">
+                                от момента первого запроса агента до выезда клиента из отеля.
+                            </div>
+                            <div class="card14">
+                                /02
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <div class="card22">
+                            <div class="card12">
+                                Мы знаем то, чего не найти в интернете
+                            </div>
+                            <div class="card13">
+                                Доскональное знание наших основных стран, особенностей отелей и даже комнат. Учитываем все детали времяпровождения клиентов.
+                            </div>
+                            <div class="card14">
+                                /03
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards2">
+                    <div class="card3">
+                        <div class="card44">
+                            <div class="card12">
+                                Прямые контракты с отелями
+                            </div>
+                            <div class="card13">
+                                тесные деловые и даже дружеские связи, позволяющие решить самые трудные задачи и запросы клиентов.
+                            </div>
+                            <div class="card14">
+                                /04
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line11">
+
+                    </div>
+                    <div class="card3">
+                        <div class="card44">
+                            <div class="card12">
+                                Человечность и индивидуальная работа
+                            </div>
+                            <div class="card13">
+                                над каждой конкретной ситуацией, а не отписка стандартными фразами и шаблонами.
+                            </div>
+                            <div class="card14">
+                                /05
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line11">
+
+                    </div>
+                    <div class="card4">
+                        <div class="card44">
+                            <div class="card12">
+                                Бонусы для лучших агентов
+                            </div>
+                            <div class="card13">
+                                приглашения в эксклюзивные фам-трипы и на гастрономические бизнес-встречи.
+                            </div>
+                            <div class="card14">
+                                /06
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="travel">
+        <div class="travel_img">
+            <div class="travel_title">
+                что такое путешествия с valanta travel company?
+                <div class="travel_title2">
+                       TRAVEL
+                </div>
+            </div>
+        </div>
+        <div class="travel_d">
+            <div class="travel_d1">
+                <div class="travel_d3">
+                    <svg width="62" height="366" viewBox="0 0 62 366" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="31.2998" y="20.1348" width="0.993266" height="316.852" fill="#C4C4C4"/>
+                        <path d="M59.3727 22.8478C59.6484 24.0362 59.8492 25.2524 59.9698 26.4912L59.3726 26.5493C59.4594 27.4409 59.5038 28.3446 59.5038 29.2585C59.5038 30.1725 59.4594 31.0762 59.3726 31.9677L59.9698 32.0259C59.8492 33.2647 59.6484 34.4809 59.3727 35.6693L58.7882 35.5337C58.3755 37.3122 57.7911 39.0276 57.0526 40.6625L57.5994 40.9094C57.091 42.035 56.5112 43.1232 55.8656 44.1684L55.3551 43.8531C54.4038 45.3933 53.3062 46.8388 52.081 48.1715L52.5227 48.5775C51.6906 49.4826 50.8009 50.3365 49.8592 51.1338L49.4715 50.6759C48.0969 51.8398 46.6091 52.8807 45.0264 53.7809L45.323 54.3025C44.258 54.9081 43.151 55.4514 42.0072 55.927L41.7768 55.373C40.124 56.0602 38.3927 56.6035 36.5995 56.9865L36.7249 57.5732C35.5331 57.8278 34.3146 58.0129 33.0741 58.1241L33.0205 57.5265C32.1268 57.6066 31.2213 57.6476 30.3058 57.6476C29.3903 57.6476 28.4848 57.6066 27.5911 57.5265L27.5375 58.1241C26.297 58.0129 25.0785 57.8278 23.8867 57.5732L24.0121 56.9865C22.2189 56.6035 20.4876 56.0602 18.8348 55.373L18.6044 55.927C17.4606 55.4514 16.3535 54.9081 15.2886 54.3025L15.5852 53.7809C14.0024 52.8807 12.5147 51.8398 11.1401 50.6759L10.7523 51.1338C9.81068 50.3365 8.92098 49.4826 8.08887 48.5775L8.53056 48.1715C7.30535 46.8389 6.20783 45.3933 5.25649 43.8531L4.74602 44.1684C4.10038 43.1232 3.52057 42.035 3.01217 40.9095L3.55898 40.6625C2.82053 39.0276 2.23609 37.3122 1.8234 35.5337L1.23893 35.6693C0.963155 34.4809 0.762419 33.2647 0.641823 32.0259L1.239 31.9677C1.15221 31.0762 1.10781 30.1725 1.10781 29.2585C1.10781 28.3446 1.15221 27.4409 1.239 26.5494L0.641822 26.4912C0.762418 25.2524 0.963154 24.0362 1.23893 22.8478L1.8234 22.9834C2.23609 21.2049 2.82053 19.4895 3.55898 17.8546L3.01217 17.6076C3.52057 16.4821 4.10038 15.3939 4.74601 14.3486L5.25649 14.664C6.20783 13.1238 7.30535 11.6782 8.53055 10.3456L8.08886 9.93954C8.92098 9.03448 9.81067 8.18057 10.7523 7.38326L11.14 7.84116C12.5147 6.67727 14.0024 5.63637 15.5852 4.73617L15.2886 4.21462C16.3535 3.60894 17.4606 3.06571 18.6044 2.59009L18.8348 3.14411C20.4876 2.45687 22.2189 1.91362 24.012 1.53061L23.8867 0.943847C25.0785 0.689299 26.297 0.504149 27.5375 0.392972L27.5911 0.990577C28.4848 0.910482 29.3903 0.869531 30.3058 0.869531C31.2213 0.869531 32.1268 0.910482 33.0205 0.990577L33.0741 0.392972C34.3146 0.504148 35.5331 0.689298 36.7249 0.943847L36.5995 1.53061C38.3927 1.91362 40.124 2.45687 41.7768 3.14411L42.0072 2.59009C43.151 3.06571 44.258 3.60894 45.323 4.21462L45.0264 4.73616C46.6091 5.63637 48.0969 6.67727 49.4715 7.84116L49.8592 7.38325C50.8009 8.18056 51.6906 9.03448 52.5227 9.93954L52.081 10.3456C53.3062 11.6782 54.4038 13.1237 55.3551 14.6639L55.8656 14.3486C56.5112 15.3939 57.091 16.4821 57.5994 17.6076L57.0526 17.8546C57.7911 19.4895 58.3755 21.2049 58.7882 22.9834L59.3727 22.8478Z" fill="white" stroke="#DD4053" stroke-width="1.2" stroke-dasharray="6 4"/>
+                        <path d="M37.3198 17.1261C36.6275 16.4745 35.7415 16.1616 34.8485 16.1616C33.8434 16.1616 32.8282 16.5579 32.0714 17.3158L31.7466 17.6406L31.4218 17.3148C30.6649 16.5579 29.6498 16.1616 28.6446 16.1616C27.7517 16.1616 26.8657 16.4745 26.1734 17.1261C24.6507 18.5594 24.6239 20.9571 26.0919 22.4252L31.7466 28.0798L37.4012 22.4252C38.8693 20.9571 38.8425 18.5594 37.3198 17.1261Z" fill="#DD4053"/>
+                        <path d="M42.8701 30.9593C42.001 30.3703 40.977 30.5372 40.0701 31.0607C39.1633 31.5841 33.9565 36.0359 33.9565 36.0359L28.8313 36.0369C28.5929 36.0369 28.3346 35.7687 28.3346 35.5313C28.3346 35.2522 28.578 35.0347 28.8313 35.0347H31.967C33.0646 35.0347 34.2933 34.3196 34.2933 33.0482C34.2933 31.6973 33.0646 31.0616 31.967 31.0616C30.0629 31.0616 29.6924 31.0696 29.6924 31.0696C28.9296 31.0696 28.1558 31.0239 27.5599 30.7051C26.7653 30.2978 25.8495 30.0674 24.8721 30.0674C23.2312 30.0674 21.7622 30.7219 20.755 31.754L15.4062 37.0203L21.3659 42.9799L23.3524 40.9933H33.4112C34.4125 40.9933 35.3789 40.6258 36.1268 39.9613L42.9377 32.3211C43.3539 31.9516 43.33 31.2722 42.8701 30.9593Z" fill="#DD4053"/>
+                        <path d="M60.3668 176.804C60.6426 177.992 60.8433 179.208 60.9639 180.447L60.3667 180.505C60.4535 181.397 60.4979 182.301 60.4979 183.215C60.4979 184.129 60.4535 185.032 60.3667 185.924L60.9639 185.982C60.8433 187.221 60.6426 188.437 60.3668 189.625L59.7823 189.49C59.3696 191.268 58.7852 192.984 58.0467 194.619L58.5936 194.866C58.0852 195.991 57.5053 197.079 56.8597 198.124L56.3492 197.809C55.3979 199.349 54.3004 200.795 53.0752 202.128L53.5169 202.534C52.6847 203.439 51.7951 204.293 50.8534 205.09L50.4657 204.632C49.0911 205.796 47.6033 206.837 46.0205 207.737L46.3171 208.259C45.2522 208.864 44.1451 209.407 43.0013 209.883L42.7709 209.329C41.1182 210.016 39.3869 210.56 37.5937 210.943L37.719 211.529C36.5272 211.784 35.3087 211.969 34.0682 212.08L34.0147 211.483C33.121 211.563 32.2154 211.604 31.2999 211.604C30.3844 211.604 29.4789 211.563 28.5852 211.483L28.5317 212.08C27.2911 211.969 26.0726 211.784 24.8809 211.529L25.0062 210.943C23.213 210.56 21.4817 210.016 19.8289 209.329L19.5986 209.883C18.4547 209.407 17.3477 208.864 16.2827 208.259L16.5794 207.737C14.9966 206.837 13.5088 205.796 12.1342 204.632L11.7465 205.09C10.8048 204.293 9.91512 203.439 9.08301 202.534L9.5247 202.128C8.29949 200.795 7.20197 199.349 6.25063 197.809L5.74016 198.125C5.09452 197.079 4.51471 195.991 4.00631 194.866L4.55312 194.619C3.81467 192.984 3.23023 191.268 2.81754 189.49L2.23307 189.625C1.9573 188.437 1.75656 187.221 1.63596 185.982L2.23314 185.924C2.14635 185.032 2.10195 184.129 2.10195 183.215C2.10195 182.301 2.14635 181.397 2.23314 180.505L1.63596 180.447C1.75656 179.208 1.95729 177.992 2.23307 176.804L2.81754 176.939C3.23023 175.161 3.81467 173.446 4.55312 171.811L4.00631 171.564C4.51471 170.438 5.09452 169.35 5.74015 168.305L6.25063 168.62C7.20197 167.08 8.29949 165.634 9.52469 164.302L9.083 163.896C9.91512 162.991 10.8048 162.137 11.7465 161.339L12.1342 161.797C13.5088 160.633 14.9966 159.592 16.5794 158.692L16.2827 158.171C17.3477 157.565 18.4547 157.022 19.5986 156.546L19.8289 157.1C21.4817 156.413 23.213 155.87 25.0062 155.487L24.8809 154.9C26.0726 154.645 27.2911 154.46 28.5317 154.349L28.5852 154.947C29.4789 154.867 30.3844 154.826 31.2999 154.826C32.2154 154.826 33.1209 154.867 34.0147 154.947L34.0682 154.349C35.3087 154.46 36.5272 154.645 37.719 154.9L37.5937 155.487C39.3869 155.87 41.1182 156.413 42.7709 157.1L43.0013 156.546C44.1451 157.022 45.2522 157.565 46.3171 158.171L46.0205 158.692C47.6033 159.592 49.0911 160.633 50.4657 161.797L50.8534 161.339C51.795 162.137 52.6847 162.991 53.5169 163.896L53.0752 164.302C54.3004 165.634 55.3979 167.08 56.3492 168.62L56.8597 168.305C57.5053 169.35 58.0852 170.438 58.5936 171.564L58.0467 171.811C58.7852 173.446 59.3696 175.161 59.7823 176.939L60.3668 176.804Z" fill="white" stroke="#969696" stroke-width="1.2" stroke-dasharray="6 4"/>
+                        <path d="M42.8119 187.2C42.5976 186.928 42.3084 186.715 41.9791 186.589C41.4029 186.369 40.7775 186.414 40.2517 186.708L36.7801 188.643C36.7604 188.926 36.7048 189.212 36.6077 189.495C36.011 191.233 34.0842 192.196 32.2523 191.722L28.8206 190.834C28.3984 190.725 28.1478 190.306 28.2609 189.898C28.374 189.491 28.808 189.249 29.2303 189.358L32.7143 190.259C33.7699 190.532 34.855 189.928 35.1378 188.908C35.4206 187.889 34.7942 186.841 33.7386 186.568L28.4194 185.191C27.3983 184.927 26.3319 185.063 25.4164 185.573L18.7836 189.271C18.405 189.482 18.2753 189.95 18.4939 190.315L21.7879 195.825C21.8928 196.001 22.0657 196.129 22.2685 196.181C22.4713 196.234 22.6873 196.206 22.8691 196.105L25.8603 194.437L32.2589 194.836C33.0412 194.884 33.8135 194.71 34.4923 194.332L42.2304 190.017C43.2486 189.45 43.5468 188.134 42.8119 187.2V187.2Z" fill="#969696"/>
+                        <path d="M25.5268 182.347H36.0801C36.5172 182.347 36.8716 182.005 36.8716 181.583C36.8716 179.554 35.7984 177.763 34.1715 176.711C33.295 177.519 32.1082 178.016 30.8035 178.016C29.4988 178.016 28.312 177.519 27.4355 176.711C25.8086 177.763 24.7354 179.554 24.7354 181.583C24.7354 182.005 25.0897 182.347 25.5268 182.347Z" fill="#969696"/>
+                        <path d="M30.8038 176.487C32.6251 176.487 34.1017 175.061 34.1017 173.302C34.1017 171.544 32.6251 170.118 30.8038 170.118C28.9824 170.118 27.5059 171.544 27.5059 173.302C27.5059 175.061 28.9824 176.487 30.8038 176.487Z" fill="#969696"/>
+                        <path d="M60.3668 329.767C60.6426 330.955 60.8433 332.171 60.9639 333.41L60.3667 333.468C60.4535 334.36 60.4979 335.264 60.4979 336.177C60.4979 337.091 60.4535 337.995 60.3667 338.887L60.9639 338.945C60.8433 340.184 60.6426 341.4 60.3668 342.588L59.7823 342.453C59.3696 344.231 58.7852 345.947 58.0467 347.581L58.5936 347.828C58.0852 348.954 57.5053 350.042 56.8597 351.087L56.3492 350.772C55.3979 352.312 54.3004 353.758 53.0752 355.09L53.5169 355.496C52.6847 356.402 51.7951 357.255 50.8534 358.053L50.4657 357.595C49.0911 358.759 47.6033 359.8 46.0205 360.7L46.3171 361.221C45.2522 361.827 44.1451 362.37 43.0013 362.846L42.7709 362.292C41.1182 362.979 39.3869 363.522 37.5937 363.905L37.719 364.492C36.5272 364.747 35.3087 364.932 34.0682 365.043L34.0147 364.445C33.121 364.526 32.2154 364.567 31.2999 364.567C30.3844 364.567 29.4789 364.526 28.5852 364.445L28.5317 365.043C27.2911 364.932 26.0726 364.747 24.8809 364.492L25.0062 363.905C23.213 363.522 21.4817 362.979 19.8289 362.292L19.5986 362.846C18.4547 362.37 17.3477 361.827 16.2827 361.221L16.5794 360.7C14.9966 359.8 13.5088 358.759 12.1342 357.595L11.7465 358.053C10.8048 357.255 9.91512 356.402 9.08301 355.496L9.5247 355.09C8.29949 353.758 7.20197 352.312 6.25063 350.772L5.74016 351.087C5.09452 350.042 4.51471 348.954 4.00631 347.828L4.55312 347.581C3.81467 345.947 3.23023 344.231 2.81754 342.453L2.23307 342.588C1.9573 341.4 1.75656 340.184 1.63596 338.945L2.23314 338.887C2.14635 337.995 2.10195 337.091 2.10195 336.177C2.10195 335.264 2.14635 334.36 2.23314 333.468L1.63596 333.41C1.75656 332.171 1.95729 330.955 2.23307 329.767L2.81754 329.902C3.23023 328.124 3.81467 326.408 4.55312 324.774L4.00631 324.527C4.51471 323.401 5.09452 322.313 5.74015 321.268L6.25063 321.583C7.20197 320.043 8.29949 318.597 9.52469 317.265L9.083 316.858C9.91512 315.953 10.8048 315.1 11.7465 314.302L12.1342 314.76C13.5088 313.596 14.9966 312.555 16.5794 311.655L16.2827 311.134C17.3477 310.528 18.4547 309.985 19.5986 309.509L19.8289 310.063C21.4817 309.376 23.213 308.833 25.0062 308.45L24.8809 307.863C26.0726 307.608 27.2911 307.423 28.5317 307.312L28.5852 307.91C29.4789 307.829 30.3844 307.788 31.2999 307.788C32.2154 307.788 33.1209 307.829 34.0147 307.91L34.0682 307.312C35.3087 307.423 36.5272 307.608 37.719 307.863L37.5937 308.45C39.3869 308.833 41.1182 309.376 42.7709 310.063L43.0013 309.509C44.1451 309.985 45.2522 310.528 46.3171 311.134L46.0205 311.655C47.6033 312.555 49.0911 313.596 50.4657 314.76L50.8534 314.302C51.795 315.1 52.6847 315.953 53.5169 316.858L53.0752 317.265C54.3004 318.597 55.3979 320.043 56.3492 321.583L56.8597 321.268C57.5053 322.313 58.0852 323.401 58.5936 324.527L58.0467 324.774C58.7852 326.408 59.3696 328.124 59.7823 329.902L60.3668 329.767Z" fill="white" stroke="#969696" stroke-width="1.2" stroke-dasharray="6 4"/>
+                        <path d="M45.6513 333.333C45.5537 333.033 45.2943 332.814 44.982 332.769L36.2075 331.494L32.2834 323.543C32.1437 323.26 31.8554 323.081 31.5398 323.081C31.2242 323.081 30.9359 323.26 30.7963 323.543L26.8719 331.494L18.0977 332.769C17.7854 332.814 17.5258 333.033 17.4283 333.333C17.3307 333.633 17.4121 333.963 17.6382 334.183L23.9871 340.372L22.4886 349.111C22.4352 349.422 22.5631 349.737 22.8184 349.922C22.9629 350.027 23.134 350.081 23.3059 350.081C23.4379 350.081 23.5704 350.049 23.6916 349.985L31.5398 345.859L39.3876 349.985C39.667 350.132 40.0055 350.108 40.2609 349.922C40.5162 349.737 40.6442 349.422 40.5908 349.111L39.0918 340.372L45.4415 334.183C45.6675 333.963 45.7489 333.633 45.6513 333.333Z" fill="#969696"/>
+                        </svg>
+                </div>
+                <div class="travel_d4">
+                    <div class="travel_d5">
+                        Абсолютно новый подход к организации путешествий. Мы помогаем реализовать путешествие согласно стилю жизни и предпочтениям клиента.
+                    </div>
+                    <div class="travel_d6">
+                        Сервис и дополнительные услуги, благодаря которым 100% времени вы уделите именно отдыху, а не решению мелких задач.
+                    </div>
+                    <div class="travel_d7">
+                        Комфорт премиум-класса за оптимальную стоимость, благодаря специальным условиям, которые дают нам партнеры.
+                    </div>
+                </div>
+            </div>
+            <div class="travel_d2">
+                <div class="travel_d3">
+                    <svg width="61" height="366" viewBox="0 0 61 366" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="29.7031" y="20.1348" width="0.993266" height="316.852" fill="#C4C4C4"/>
+                        <path d="M59.7633 22.8478C60.0391 24.0362 60.2398 25.2524 60.3604 26.4912L59.7632 26.5493C59.85 27.4409 59.8944 28.3446 59.8944 29.2585C59.8944 30.1725 59.85 31.0762 59.7632 31.9677L60.3604 32.0259C60.2398 33.2647 60.0391 34.4809 59.7633 35.6693L59.1788 35.5337C58.7661 37.3122 58.1817 39.0276 57.4432 40.6625L57.99 40.9094C57.4816 42.035 56.9018 43.1232 56.2562 44.1684L55.7457 43.8531C54.7944 45.3933 53.6969 46.8388 52.4717 48.1715L52.9133 48.5775C52.0812 49.4826 51.1915 50.3365 50.2499 51.1338L49.8622 50.6759C48.4875 51.8398 46.9998 52.8807 45.417 53.7809L45.7136 54.3025C44.6487 54.9081 43.5416 55.4514 42.3978 55.927L42.1674 55.373C40.5146 56.0602 38.7834 56.6035 36.9902 56.9865L37.1155 57.5732C35.9237 57.8278 34.7052 58.0129 33.4647 58.1241L33.4111 57.5265C32.5174 57.6066 31.6119 57.6476 30.6964 57.6476C29.7809 57.6476 28.8754 57.6066 27.9817 57.5265L27.9281 58.1241C26.6876 58.0129 25.4691 57.8278 24.2773 57.5732L24.4027 56.9865C22.6095 56.6035 20.8782 56.0602 19.2254 55.373L18.9951 55.927C17.8512 55.4514 16.7442 54.9081 15.6792 54.3025L15.9759 53.7809C14.3931 52.8807 12.9053 51.8398 11.5307 50.6759L11.143 51.1338C10.2013 50.3365 9.31161 49.4826 8.47949 48.5775L8.92118 48.1715C7.69598 46.8389 6.59845 45.3933 5.64711 43.8531L5.13664 44.1684C4.491 43.1232 3.9112 42.035 3.4028 40.9095L3.94961 40.6625C3.21116 39.0276 2.62672 37.3122 2.21403 35.5337L1.62956 35.6693C1.35378 34.4809 1.15304 33.2647 1.03245 32.0259L1.62963 31.9677C1.54284 31.0762 1.49844 30.1725 1.49844 29.2585C1.49844 28.3446 1.54284 27.4409 1.62962 26.5494L1.03245 26.4912C1.15304 25.2524 1.35378 24.0362 1.62956 22.8478L2.21403 22.9834C2.62672 21.2049 3.21115 19.4895 3.94961 17.8546L3.4028 17.6076C3.91119 16.4821 4.491 15.3939 5.13664 14.3486L5.64711 14.6639C6.59845 13.1238 7.69598 11.6782 8.92118 10.3456L8.47949 9.93954C9.31161 9.03448 10.2013 8.18057 11.143 7.38326L11.5307 7.84116C12.9053 6.67727 14.3931 5.63637 15.9759 4.73617L15.6792 4.21462C16.7442 3.60894 17.8512 3.06571 18.995 2.59009L19.2254 3.14411C20.8782 2.45687 22.6095 1.91362 24.4027 1.53061L24.2773 0.943847C25.4691 0.689299 26.6876 0.504149 27.9281 0.392972L27.9817 0.990577C28.8754 0.910482 29.7809 0.869531 30.6964 0.869531C31.6119 0.869531 32.5174 0.910482 33.4111 0.990577L33.4647 0.392972C34.7052 0.504148 35.9237 0.689298 37.1155 0.943847L36.9902 1.53061C38.7833 1.91362 40.5146 2.45687 42.1674 3.14411L42.3978 2.59009C43.5416 3.06571 44.6487 3.60894 45.7136 4.21462L45.417 4.73616C46.9998 5.63637 48.4875 6.67727 49.8622 7.84116L50.2499 7.38325C51.1915 8.18056 52.0812 9.03448 52.9133 9.93954L52.4717 10.3456C53.6969 11.6782 54.7944 13.1237 55.7457 14.6639L56.2562 14.3486C56.9018 15.3939 57.4816 16.4821 57.99 17.6076L57.4432 17.8546C58.1817 19.4895 58.7661 21.2049 59.1788 22.9834L59.7633 22.8478Z" fill="white" stroke="#969696" stroke-width="1.2" stroke-dasharray="6 4"/>
+                        <g clip-path="url(#clip0_0_1)">
+                        <path d="M27.9436 38.4229L26.6074 37.7368L26.9968 40.5334C27.1328 40.5861 27.2739 40.6119 27.4135 40.6119C27.834 40.6119 28.2396 40.3821 28.4449 39.9824C28.7371 39.4134 28.5127 38.7152 27.9436 38.4229Z" fill="#969696"/>
+                        <path d="M28.2787 24.5679L28.8348 24.4434L32.196 22.4177C32.4381 22.2719 32.7133 22.1918 32.995 22.1828C32.8202 21.9965 32.6708 21.7847 32.5531 21.5523L30.7522 22.8154H28.3826H27.4145C27.3422 22.8154 27.2718 22.8231 27.2038 22.8374C27.1898 22.8367 27.1759 22.8356 27.1618 22.8356C27.1082 22.8356 27.054 22.8405 26.9995 22.8507L24.4318 23.3284C23.8266 22.6326 23.2126 21.9269 22.6047 21.228L24.3843 17.7554C24.6413 17.2541 24.4431 16.6395 23.9418 16.3825C23.4405 16.1255 22.8259 16.3237 22.5689 16.825L20.4746 20.9117C20.2845 21.2826 20.3392 21.7319 20.6127 22.0463C21.1546 22.6693 22.4249 24.1295 22.9995 24.7901L24.329 31.9358C23.9568 32.4621 21.6839 35.6766 21.3462 36.1542C20.9392 36.7296 21.137 37.5321 21.7628 37.8534L23.0265 38.5023L22.7793 36.7266C22.7828 36.6747 22.5747 35.9788 23.1374 35.3654L26.0938 32.5108L23.6546 35.7899C23.4762 36.0329 23.3998 36.3359 23.4413 36.6344L24.2262 42.2719C24.3139 42.902 24.8959 43.3474 25.5327 43.2589C26.166 43.1707 26.6079 42.5858 26.5197 41.9525L25.7996 36.7806L29.135 32.2531C29.5484 31.6921 29.6991 30.9797 29.5483 30.2994L28.2787 24.5679Z" fill="#969696"/>
+                        <path d="M32.0197 39.9824C32.2251 40.3822 32.6306 40.6119 33.0511 40.6119C33.1906 40.6119 33.3318 40.5861 33.4678 40.5334L33.8571 37.7368L32.521 38.4229C31.952 38.7152 31.7275 39.4134 32.0197 39.9824Z" fill="#969696"/>
+                        <path d="M34.9729 22.4057C35.1491 22.4057 35.3282 22.3831 35.5067 22.3359C36.6168 22.0418 37.2783 20.9036 36.9843 19.7935C36.7375 18.8618 35.896 18.2461 34.9757 18.2461C34.7995 18.2461 34.6203 18.2686 34.4419 18.3159C33.3319 18.6099 32.6703 19.7482 32.9644 20.8583C33.2111 21.79 34.0525 22.4057 34.9729 22.4057Z" fill="#969696"/>
+                        <path d="M41.6393 18.6514C41.0998 18.5296 40.564 18.8755 40.4231 19.4103L39.4351 23.1599C38.8972 23.2268 37.3938 23.4136 36.8449 23.4818C36.8395 23.4805 33.41 22.8163 33.0476 22.8163C32.869 22.8163 32.6882 22.863 32.524 22.9619L29.0166 25.0537L29.4635 27.0441L29.6821 26.9951C29.7891 26.9711 29.8916 26.9301 29.9856 26.8734L31.958 25.6848L30.9146 30.313C30.7635 30.9835 30.9109 31.6865 31.3187 32.2397L34.6655 36.7808L33.9491 41.9258C33.862 42.5513 34.2776 43.1505 34.9006 43.2542C34.9655 43.265 35.03 43.2702 35.0936 43.2702C35.6621 43.2702 36.1582 42.8511 36.2388 42.272L37.0238 36.6345C37.0653 36.336 36.9888 36.033 36.8105 35.79L34.1947 32.2224L37.3276 35.3655C37.64 35.6891 37.7674 36.1232 37.7123 36.5369L37.6858 36.7267L37.4385 38.5024L38.7022 37.8535C39.0008 37.7002 39.2182 37.4249 39.2981 37.099C39.3781 36.773 39.3126 36.4284 39.1189 36.1543L36.1141 31.5747L37.3167 25.4788C38.0781 25.3842 38.4855 25.3335 40.3713 25.0992C40.7849 25.0478 41.1257 24.7499 41.2318 24.3469L42.4019 19.9064C42.5485 19.3497 42.2056 18.7792 41.6393 18.6514Z" fill="#969696"/>
+                        <path d="M25.949 22.3995C26.9245 22.4687 27.8438 21.8399 28.1039 20.8578C28.398 19.7477 27.7364 18.6095 26.6263 18.3154C25.5163 18.0214 24.378 18.6829 24.084 19.793C23.7494 21.0564 24.6483 22.3072 25.949 22.3995Z" fill="#969696"/>
+                        </g>
+                        <path d="M59.7633 176.804C60.0391 177.992 60.2398 179.208 60.3604 180.447L59.7632 180.505C59.85 181.397 59.8944 182.301 59.8944 183.215C59.8944 184.129 59.85 185.032 59.7632 185.924L60.3604 185.982C60.2398 187.221 60.0391 188.437 59.7633 189.625L59.1788 189.49C58.7661 191.268 58.1817 192.984 57.4432 194.619L57.99 194.866C57.4816 195.991 56.9018 197.079 56.2562 198.124L55.7457 197.809C54.7944 199.349 53.6969 200.795 52.4717 202.128L52.9133 202.534C52.0812 203.439 51.1915 204.293 50.2499 205.09L49.8622 204.632C48.4875 205.796 46.9998 206.837 45.417 207.737L45.7136 208.259C44.6487 208.864 43.5416 209.407 42.3978 209.883L42.1674 209.329C40.5146 210.016 38.7834 210.56 36.9902 210.943L37.1155 211.529C35.9237 211.784 34.7052 211.969 33.4647 212.08L33.4111 211.483C32.5174 211.563 31.6119 211.604 30.6964 211.604C29.7809 211.604 28.8754 211.563 27.9817 211.483L27.9281 212.08C26.6876 211.969 25.4691 211.784 24.2773 211.529L24.4027 210.943C22.6095 210.56 20.8782 210.016 19.2254 209.329L18.9951 209.883C17.8512 209.407 16.7442 208.864 15.6792 208.259L15.9759 207.737C14.3931 206.837 12.9053 205.796 11.5307 204.632L11.143 205.09C10.2013 204.293 9.31161 203.439 8.47949 202.534L8.92118 202.128C7.69598 200.795 6.59845 199.349 5.64711 197.809L5.13664 198.125C4.491 197.079 3.9112 195.991 3.4028 194.866L3.94961 194.619C3.21116 192.984 2.62672 191.268 2.21403 189.49L1.62956 189.625C1.35378 188.437 1.15304 187.221 1.03245 185.982L1.62963 185.924C1.54284 185.032 1.49844 184.129 1.49844 183.215C1.49844 182.301 1.54284 181.397 1.62962 180.505L1.03245 180.447C1.15304 179.208 1.35378 177.992 1.62956 176.804L2.21403 176.939C2.62672 175.161 3.21115 173.446 3.94961 171.811L3.4028 171.564C3.91119 170.438 4.491 169.35 5.13664 168.305L5.64711 168.62C6.59845 167.08 7.69598 165.634 8.92118 164.302L8.47949 163.896C9.31161 162.991 10.2013 162.137 11.143 161.339L11.5307 161.797C12.9053 160.633 14.3931 159.592 15.9759 158.692L15.6792 158.171C16.7442 157.565 17.8512 157.022 18.995 156.546L19.2254 157.1C20.8782 156.413 22.6095 155.87 24.4027 155.487L24.2773 154.9C25.4691 154.645 26.6876 154.46 27.9281 154.349L27.9817 154.947C28.8754 154.867 29.7809 154.826 30.6964 154.826C31.6119 154.826 32.5174 154.867 33.4111 154.947L33.4647 154.349C34.7052 154.46 35.9237 154.645 37.1155 154.9L36.9902 155.487C38.7833 155.87 40.5146 156.413 42.1674 157.1L42.3978 156.546C43.5416 157.022 44.6487 157.565 45.7136 158.171L45.417 158.692C46.9998 159.592 48.4875 160.633 49.8622 161.797L50.2499 161.339C51.1915 162.137 52.0812 162.991 52.9133 163.896L52.4717 164.302C53.6969 165.634 54.7944 167.08 55.7457 168.62L56.2562 168.305C56.9018 169.35 57.4816 170.438 57.99 171.564L57.4432 171.811C58.1817 173.446 58.7661 175.161 59.1788 176.939L59.7633 176.804Z" fill="white" stroke="#969696" stroke-width="1.2" stroke-dasharray="6 4"/>
+                        <g clip-path="url(#clip1_0_1)">
+                        <path d="M26.3289 190.338C25.4528 191.174 24.2668 191.689 22.9629 191.689C21.659 191.689 20.4729 191.174 19.5969 190.338C17.9711 191.427 16.8984 193.28 16.8984 195.38V196.435C16.8984 196.871 17.2526 197.226 17.6895 197.226H28.2363C28.6732 197.226 29.0273 196.871 29.0273 196.435V195.38C29.0273 193.28 27.9547 191.427 26.3289 190.338Z" fill="#969696"/>
+                        <path d="M22.9629 190.106C21.1455 190.106 19.667 188.628 19.667 186.811C19.667 184.993 21.1455 183.515 22.9629 183.515C24.7803 183.515 26.2588 184.993 26.2588 186.811C26.2588 188.628 24.7803 190.106 22.9629 190.106Z" fill="#969696"/>
+                        <path d="M35.7764 177.608C36.3589 177.608 36.8311 177.136 36.8311 176.554C36.8311 175.971 36.3589 175.499 35.7764 175.499C35.1939 175.499 34.7217 175.971 34.7217 176.554C34.7217 177.136 35.1939 177.608 35.7764 177.608Z" fill="#969696"/>
+                        <path d="M35.7761 179.19C34.4509 179.19 33.3305 180.084 32.9854 181.3H38.5669C38.2217 180.084 37.1013 179.19 35.7761 179.19Z" fill="#969696"/>
+                        <path d="M43.3346 174.575C42.5384 173.201 41.0537 172.413 39.5031 172.49C38.7932 171.113 37.3673 170.226 35.7762 170.226C34.1851 170.226 32.7591 171.113 32.0493 172.49C30.4972 172.413 29.0137 173.201 28.2177 174.575C27.4214 175.95 27.4788 177.625 28.3199 178.927C27.4788 180.229 27.4214 181.904 28.2177 183.278C29.0138 184.653 30.4973 185.44 32.0493 185.364C32.7591 186.741 34.1851 187.628 35.7762 187.628C37.3673 187.628 38.7933 186.741 39.5031 185.364C39.5721 185.367 39.6409 185.369 39.7096 185.369C41.1847 185.369 42.574 184.591 43.3346 183.278C44.1309 181.904 44.0735 180.228 43.2324 178.927C44.0735 177.625 44.1309 175.95 43.3346 174.575ZM39.4676 182.882H32.0847C31.6479 182.882 31.2937 182.528 31.2937 182.091C31.2937 180.381 32.2567 178.892 33.6686 178.136C33.3366 177.695 33.1394 177.147 33.1394 176.554C33.1394 175.1 34.3223 173.917 35.7762 173.917C37.23 173.917 38.4129 175.1 38.4129 176.554C38.4129 177.147 38.2158 177.695 37.8837 178.136C39.2956 178.892 40.2586 180.381 40.2586 182.091C40.2586 182.528 39.9044 182.882 39.4676 182.882Z" fill="#969696"/>
+                        <path d="M31.1367 194.747C31.5736 194.747 31.9277 194.393 31.9277 193.956C31.9277 193.519 31.5736 193.165 31.1367 193.165C30.6999 193.165 30.3457 193.519 30.3457 193.956C30.3457 194.393 30.6999 194.747 31.1367 194.747Z" fill="#969696"/>
+                        <path d="M35.7246 193.956C34.4161 193.956 33.3516 192.892 33.3516 191.583C33.3516 190.275 34.4161 189.21 35.7246 189.21C37.0331 189.21 38.0977 190.275 38.0977 191.583C38.0977 192.892 37.0331 193.956 35.7246 193.956Z" fill="#969696"/>
+                        </g>
+                        <path d="M59.7633 329.767C60.0391 330.955 60.2398 332.171 60.3604 333.41L59.7632 333.468C59.85 334.36 59.8944 335.264 59.8944 336.177C59.8944 337.091 59.85 337.995 59.7632 338.887L60.3604 338.945C60.2398 340.184 60.0391 341.4 59.7633 342.588L59.1788 342.453C58.7661 344.231 58.1817 345.947 57.4432 347.581L57.99 347.828C57.4816 348.954 56.9018 350.042 56.2562 351.087L55.7457 350.772C54.7944 352.312 53.6969 353.758 52.4717 355.09L52.9133 355.496C52.0812 356.402 51.1915 357.255 50.2499 358.053L49.8622 357.595C48.4875 358.759 46.9998 359.8 45.417 360.7L45.7136 361.221C44.6487 361.827 43.5416 362.37 42.3978 362.846L42.1674 362.292C40.5146 362.979 38.7834 363.522 36.9902 363.905L37.1155 364.492C35.9237 364.747 34.7052 364.932 33.4647 365.043L33.4111 364.445C32.5174 364.526 31.6119 364.567 30.6964 364.567C29.7809 364.567 28.8754 364.526 27.9817 364.445L27.9281 365.043C26.6876 364.932 25.4691 364.747 24.2773 364.492L24.4027 363.905C22.6095 363.522 20.8782 362.979 19.2254 362.292L18.9951 362.846C17.8512 362.37 16.7442 361.827 15.6792 361.221L15.9759 360.7C14.3931 359.8 12.9053 358.759 11.5307 357.595L11.143 358.053C10.2013 357.255 9.31161 356.402 8.47949 355.496L8.92118 355.09C7.69598 353.758 6.59845 352.312 5.64711 350.772L5.13664 351.087C4.491 350.042 3.9112 348.954 3.4028 347.828L3.94961 347.581C3.21116 345.947 2.62672 344.231 2.21403 342.453L1.62956 342.588C1.35378 341.4 1.15304 340.184 1.03245 338.945L1.62963 338.887C1.54284 337.995 1.49844 337.091 1.49844 336.177C1.49844 335.264 1.54284 334.36 1.62962 333.468L1.03245 333.41C1.15304 332.171 1.35378 330.955 1.62956 329.767L2.21403 329.902C2.62672 328.124 3.21115 326.408 3.94961 324.774L3.4028 324.527C3.91119 323.401 4.491 322.313 5.13664 321.268L5.64711 321.583C6.59845 320.043 7.69598 318.597 8.92118 317.265L8.47949 316.858C9.31161 315.953 10.2013 315.1 11.143 314.302L11.5307 314.76C12.9053 313.596 14.3931 312.555 15.9759 311.655L15.6792 311.134C16.7442 310.528 17.8512 309.985 18.995 309.509L19.2254 310.063C20.8782 309.376 22.6095 308.833 24.4027 308.45L24.2773 307.863C25.4691 307.608 26.6876 307.423 27.9281 307.312L27.9817 307.91C28.8754 307.829 29.7809 307.788 30.6964 307.788C31.6119 307.788 32.5174 307.829 33.4111 307.91L33.4647 307.312C34.7052 307.423 35.9237 307.608 37.1155 307.863L36.9902 308.45C38.7833 308.833 40.5146 309.376 42.1674 310.063L42.3978 309.509C43.5416 309.985 44.6487 310.528 45.7136 311.134L45.417 311.655C46.9998 312.555 48.4875 313.596 49.8622 314.76L50.2499 314.302C51.1915 315.1 52.0812 315.953 52.9133 316.858L52.4717 317.265C53.6969 318.597 54.7944 320.043 55.7457 321.583L56.2562 321.268C56.9018 322.313 57.4816 323.401 57.99 324.527L57.4432 324.774C58.1817 326.408 58.7661 328.124 59.1788 329.902L59.7633 329.767Z" fill="white" stroke="#969696" stroke-width="1.2" stroke-dasharray="6 4"/>
+                        <g clip-path="url(#clip2_0_1)">
+                        <path d="M35.9148 335.507C35.8515 335.239 35.6553 335.025 35.395 334.938L31.514 333.644L34.2702 328.132C34.4433 327.785 34.3397 327.363 34.0253 327.136C33.7094 326.91 33.2768 326.944 33.0033 327.219L25.0932 335.129C24.8993 335.323 24.8197 335.603 24.8823 335.87C24.9456 336.137 25.1419 336.352 25.4022 336.438L29.2831 337.732L26.5269 343.244C26.3539 343.591 26.4574 344.013 26.7718 344.24C27.0867 344.466 27.5184 344.433 27.7938 344.158L35.7039 336.247C35.8978 336.053 35.9774 335.773 35.9148 335.507Z" fill="#969696"/>
+                        <path d="M30.3984 322.188C26.3838 322.188 22.5917 324.056 20.0625 327.068V326.196C20.0625 325.759 19.7087 325.405 19.2715 325.405C18.8343 325.405 18.4805 325.759 18.4805 326.196V329.557C18.4805 330.311 19.4555 330.42 19.2715 330.348C19.2877 330.348 19.3039 330.347 19.3202 330.346L22.4842 330.15C22.9207 330.123 23.2521 329.747 23.225 329.312C23.198 328.876 22.8172 328.548 22.3869 328.571L20.7841 328.671C23.0042 325.651 26.5963 323.771 30.3984 323.771C36.9413 323.771 42.3164 329.146 42.3164 335.688C42.3164 336.126 42.6702 336.479 43.1074 336.479C43.5446 336.479 43.8984 336.126 43.8984 335.688C43.8984 328.273 37.8134 322.188 30.3984 322.188Z" fill="#969696"/>
+                        <path d="M41.4767 341.031L38.3127 341.227C37.8762 341.254 37.5448 341.63 37.5718 342.065C37.5989 342.501 37.9882 342.833 38.41 342.806L40.0128 342.706C37.7927 345.726 34.2006 347.606 30.3984 347.606C23.8556 347.606 18.4805 342.231 18.4805 335.688C18.4805 335.251 18.1267 334.897 17.6895 334.897C17.2522 334.897 16.8984 335.251 16.8984 335.688C16.8984 343.103 22.9835 349.188 30.3984 349.188C34.4131 349.188 38.2052 347.321 40.7344 344.309V345.181C40.7344 345.618 41.0882 345.972 41.5254 345.972C41.9626 345.972 42.3164 345.618 42.3164 345.181V341.82C42.3164 341.386 41.8998 341.007 41.4767 341.031Z" fill="#969696"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_0_1">
+                        <rect width="27" height="27" fill="white" transform="translate(17.8984 16.2695)"/>
+                        </clipPath>
+                        <clipPath id="clip1_0_1">
+                        <rect width="27" height="27" fill="white" transform="translate(16.8984 170.226)"/>
+                        </clipPath>
+                        <clipPath id="clip2_0_1">
+                        <rect width="27" height="27" fill="white" transform="translate(16.8984 322.188)"/>
+                        </clipPath>
+                        </defs>
+                        </svg>            
+                </div>
+                <div class="travel_d8">
+                    <div class="travel_d9">
+                        Нестандартные развлечения: от охоты за трюфелями до пикника на необитаемом острове, в зависимости от выбранной страны.
+                    </div>
+                    <div class="travel_d10">
+                        Впечатления и воспоминания, которые будут вызывать мурашки всю оставшуюся жизнь, как поездка на только что купленном первом автомобиле.
+                    </div>
+                    <div class="travel_d11">
+                        Полное восстановление энергии и всего организма. Готовность по новой ворваться в рабочий ритм с повышенной продуктивностью.
+                    </div>
+                </div>
+                        
+            </div>
+        </div>
+    </div>
+    <div class="footer1">
+        <div class="footer2">
+            <div class="footer3">
+                <div class="f_con1">
+                    ПУТЕШЕСТВУЙ С Valanta Travel Company!
+                </div>
+                <div class="f_con2">
+                    ПОДПИСЫВАЙТЕСЬ НА НАШУ РАССЫЛКУ, ЧТОБЫ ПОЛУЧАТЬ САМЫЕ ГОРЯЧИЕ ПРЕДЛОЖЕНИЯ
+                </div>
+            </div>
+            <div class="footer4">
+                <form class="inp3">
+                    <p><input type="search" class="inp5" placeholder="Email" color: white;>
+                        <p class="p2"><input type="radio" class="a2" value="Я турист"> Я турист</p>
+                        <p class="p2"><input type="radio" class="a2" value="Я турагент"> Я турагент</p>
+                    
+
+                    <input type="submit" class="sumbit2" value="Отправить"></p>
+            </div>
+        </div>
+        <div class="footer0">
+            <div class="footer5">
+                <img src="valanta1.png" class="img3">
+                <div class="footer6">
+                    <a href="#" class="a3">Отели</a>
+                    <a href="#" class="a3">Страны</a>
+                    <a href="#" class="a3">Maistra online</a>
+                    <a href="#" class="a3">Туры online</a>
+
+                </div>
+                <div class="footer7">
+                    <a href="#" class="a3">Агентам</a>
+                    <a href="#" class="a3">О нас</a>
+                    <a href="#" class="a3">Блог</a>
+
+                </div>
+                <div class="footer8">
+                    Режим работы
+                    <p class="p3">Пн-Пт 10:00-19:00</p>
+                </div>
+                <div class="footer8">
+                    <p class="p4">+38 (000) 000-00-00</p>
+                    <p class="p3">+38 (000) 000-00-00</p>
+                    Все контакты
+                </div>
+            </div>
+            <div class="line7">
+
+            </div>
+            <div class="footer9">
+                <div class="footer10">
+                    2002-2021 Туроператор Valanta Travel Company
+                </div>
+                <div class="footer11">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
